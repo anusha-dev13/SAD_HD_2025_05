@@ -1,14 +1,12 @@
 package SOLID;
 
-public class DIP_01 {
+//FIXED: Now using Dependency Inversion Principle
 
-    // Abstraction
+public class DIP_01 {
     public interface Switchable {
         void turnOn();
         void turnOff();
     }
-
-    // Implementation of abstraction
     public static class LightBulb implements Switchable {
         public void turnOn() {
             System.out.println("Light is ON!");
@@ -23,7 +21,6 @@ public class DIP_01 {
         public Switch(Switchable device) {
             this.device = device;
         }
-
         public void operate() {
             device.turnOn();  
         }
