@@ -1,6 +1,6 @@
 package SOLID;
 
-//FIXED: Now using Dependency Inversion Principle
+//FIXED: Now using DIP
 
 public class DIP_01 {
     public interface Switchable {
