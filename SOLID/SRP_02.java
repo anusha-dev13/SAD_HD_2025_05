@@ -1,12 +1,6 @@
 package SOLID;
 
 public class SRP_02 {
-
-    /*
-     * TASK:
-     * Just make this class obeying the SRP (Single Responsibility Principle)!
-     * The method bodies are empty by purpose and there is no main provided.
-     */
        
      public static final class Employee {
         private final int id;
@@ -32,22 +26,18 @@ public class SRP_02 {
         { this.salary = salary; }
     }
  
-    /** Handles salary updates only – its single responsibility. */
     public static final class SalaryService {
         public void updateSalary(Employee employee, double newSalary) {
             employee.setSalary(newSalary);
         }
     }
  
-    /** Sends mail – and nothing else – so SRP is satisfied. */
     public static final class MailService {
         public void sendMail(Employee employee, String message) {
-            // stub implementation
             System.out.printf("Email to employee %d: %s%n", employee.getId(), message);
         }
     }
  
-   
     public static void main(String[] args) {
         Employee emp = new Employee(1, "Developer", 50_000);
         SalaryService salaryService = new SalaryService();

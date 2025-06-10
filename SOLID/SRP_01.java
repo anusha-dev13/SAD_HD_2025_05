@@ -5,11 +5,6 @@ import java.io.IOException;
 
 public class SRP_01 {
 
-    /*
-     * TASK:
-     * Please apply to the following class "User" the
-     * SRP (Single Responsibility Principle)
-     */
     public static class User {
         private String name;
         private String email;
@@ -27,8 +22,8 @@ public class SRP_01 {
         }
     }
  
-    public static class StorageAndNoOtherStuffCauseSingleResponsibility {
-        public void saveUserToFile(User user) {
+    public static class UserSaver{
+        public void saveToFile(User user) {
             try (FileWriter fileWriter = new FileWriter(user.getName() + ".output.txt")) {
                 fileWriter.write("Name: " + user.getName() + "\n");
                 fileWriter.write("Email: " + user.getEmail() + "\n");
@@ -40,8 +35,8 @@ public class SRP_01 {
     }
  
     public static void main(String[] args) {
-        User user = new User("abcc", "abcc@company.com");
-        StorageAndNoOtherStuffCauseSingleResponsibility StorageAndNoOtherStuffCauseSingleResponsibilityService = new StorageAndNoOtherStuffCauseSingleResponsibility();
-        StorageAndNoOtherStuffCauseSingleResponsibilityService.saveUserToFile(user);
+        User user = new User("anusha", "anusha@gmail.com");
+        UserSaver userSaver = new UserSaver();
+        userSaver.saveToFile(user);
     }
 }
