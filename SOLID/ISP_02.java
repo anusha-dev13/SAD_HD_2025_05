@@ -2,11 +2,6 @@ package SOLID;
 
 public class ISP_02 {
     
-    /*
-     * TASK:
-     * Again, some classes are more simple than other.
-     * Fix this without violating the ISP (Interface Segregation Principle)!
-     */
     public interface Workable {
         void work();
     }
@@ -33,12 +28,10 @@ public class ISP_02 {
             System.out.println("Robot is working hard ...");
         }
     }
- 
-    // Adjust the working cycle for Workable only
+
     public static void workingCycle(Workable worker) {
         worker.work();
- 
-        // Optional: check if it can rest too
+        
         if (worker instanceof Restable) {
             ((Restable) worker).rest();
         }
