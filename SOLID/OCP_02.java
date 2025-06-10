@@ -1,20 +1,8 @@
 package SOLID;
 
 public class OCP_02 {
-
-    /*
-     * TASK:
-     * (classical task)
-     * How to add other shapes without violating the OCP
-     * (Open/Closed Principle)?
-     * The interface/class/method bodies are empty by purpose
-     * and there is no main provided.
-     */
     
     public static abstract class Shape {
-        /**
-         * @return the area in square units.
-         */
         public abstract double area();
     }
 
@@ -40,7 +28,6 @@ public class OCP_02 {
         @Override public double area() { return width * height; }
     }
  
- 
     public static final class Triangle extends Shape {
         private final double base;
         private final double height;
@@ -53,7 +40,7 @@ public class OCP_02 {
 
     public static class AreaCalculator {
         public double getArea(Shape shape) {
-            return shape.area(); // Delegation obeys OCP
+            return shape.area(); 
         }
     }
 

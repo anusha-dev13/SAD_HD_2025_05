@@ -3,19 +3,7 @@ package SOLID;
 import java.util.HashMap;
 import java.util.Map;
 
- /*
-     * TASK:
-     * How to add a new discount type (customerType) without
-     * violating OCP (Open/Closed Principle)?
-     */
-
 interface DiscountStrategy {
-        /**
-         * Calculates the discount for the given amount.
-         *
-         * @param amount - price before discount
-         * @return the monetary value of the discount
-         */
         double applyDiscount(double amount);
     }
 
@@ -47,7 +35,7 @@ public class OCP_01 {
         public DiscountCalculator() {
             strategyMap.put("Regular", new RegularCustomer());
             strategyMap.put("Premium", new PremiumCustomer());
-            strategyMap.put("Gold", new GoldCustomer()); // OCP‑friendly addition
+            strategyMap.put("Gold", new GoldCustomer()); 
         }
  
         public double calculateDiscount(String customerType, double amount) {
@@ -58,8 +46,8 @@ public class OCP_01 {
  
     public static void main(String[] args) {
         DiscountCalculator calculator = new DiscountCalculator();
-        System.out.println("Regular Discount: " + calculator.calculateDiscount("Regular", 200.0));
-        System.out.println("Premium Discount: " + calculator.calculateDiscount("Premium", 200.0));
+        System.out.println("Regular Discount: " + calculator.calculateDiscount("Regular", 300.0));
+        System.out.println("Premium Discount: " + calculator.calculateDiscount("Premium", 100.0));
         System.out.println("Gold Discount: " + calculator.calculateDiscount("Gold", 200.0));
     }
 }
