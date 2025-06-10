@@ -2,11 +2,6 @@ package SOLID;
 
 public class DIP_02 {
 
-    /*
-     * FIXED: The Employee class now depends on the Notification interface,
-     * not on the EmailNotification class. This follows DIP.
-     */
-
     public static interface Notification {
         void doNotify();
     }

@@ -1,7 +1,5 @@
 package SOLID;
 
-//FIXED: Now using DIP
-
 public class DIP_01 {
     public interface Switchable {
         void turnOn();
